@@ -1,23 +1,26 @@
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { MessageSquare, FileText, Calendar } from "lucide-react"
+import { MessageSquare, FileText } from "lucide-react"
 import Link from "next/link"
 import HomeClient from "./page-client"
 import { Logo } from "@/components/logo"
 import Image from "next/image"
+import { FeaturesSectionClient } from "@/components/features-section-client" // Import the new client component
+import { ContactForm } from "@/components/contact-form"
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" id="top">
+      {" "}
+      {/* Added id="top" for smooth scrolling to top */}
       <HomeClient />
-
       {/* Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Logo />
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="#" className="text-sm font-medium hover:text-brand-primary transition-colors">
+            <Link href="#top" className="text-sm font-medium hover:text-brand-primary transition-colors">
+              {" "}
+              {/* Updated href from "#" to "#top" for smooth scrolling */}
               Home
             </Link>
             <Link href="#features" className="text-sm font-medium hover:text-brand-primary transition-colors">
@@ -29,13 +32,12 @@ export default function Home() {
             <Link href="#how-it-works" className="text-sm font-medium hover:text-brand-primary transition-colors">
               How It Works
             </Link>
-            <Link href="#contact" className="text-sm font-medium hover:text-brand-primary transition-colors">
-              Contact
-            </Link>
           </nav>
-          <Button size="sm" className="hidden md:flex bg-brand-primary hover:bg-teal-600">
-            Request a Demo
-          </Button>
+          <Link href="#contact">
+            <Button size="sm" className="hidden md:flex bg-brand-primary hover:bg-teal-600">
+              Join Waitlist
+            </Button>
+          </Link>
           <Button variant="ghost" size="icon" className="md:hidden" id="mobile-menu-button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +58,6 @@ export default function Home() {
           </Button>
         </div>
       </header>
-
       {/* Hero Section */}
       <section className="pt-24 pb-16 md:pt-32 md:pb-24 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -74,14 +75,29 @@ export default function Home() {
             <div className="mb-8 text-center">
               <p className="text-lg font-medium mb-6">Seamlessly integrates with Teams, Confluence, and Jira</p>
               <div className="flex items-center justify-center gap-8">
-                <img src="/placeholder.svg?height=60&width=180" alt="Confluence logo" className="h-8 object-contain" />
-                <img src="/placeholder.svg?height=60&width=180" alt="Jira logo" className="h-8 object-contain" />
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Microsoft-Teams-Symbol%20-2-rHESfDymve6RibneM8g1bAz6DP2aTE.png"
+                  alt="Microsoft Teams logo"
+                  className="h-12 object-contain"
+                />
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Confluence-Emblem_small-1y2tPigGp1aGDERpkmlQ8I3C5518L4.png"
+                  alt="Confluence logo"
+                  className="h-12 object-contain"
+                />
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Jira_Logo%283%29-K8zC4Os0XcCzY1ibPXddfO8AwtAHjU.png"
+                  alt="Jira logo"
+                  className="h-12 object-contain"
+                />
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-2">
-              <Button size="lg" className="bg-brand-primary hover:bg-teal-600">
-                Request a Demo
-              </Button>
+              <Link href="#contact">
+                <Button size="lg" className="bg-brand-primary hover:bg-teal-600">
+                  Join Waitlist
+                </Button>
+              </Link>
               <Button size="lg" variant="outline" className="gap-2 bg-transparent">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -103,11 +119,28 @@ export default function Home() {
           </div>
           <div className="mt-16 max-w-4xl mx-auto">
             <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl border border-gray-200 bg-white">
-              <img
-                src="/placeholder.svg?height=720&width=1280"
-                alt="TeamBrain AI visualization"
+              {/* Option C: HTML5 Video - for your hosted MP4 file */}
+              <video
                 className="w-full h-full object-cover"
+                controls
+                preload="metadata"
+                poster="/placeholder.svg?height=720&width=1280" // Replace with your video thumbnail
+              >
+                <source src="https://your-domain.com/path/to/your-video.mp4" type="video/mp4" />
+                <source src="https://your-domain.com/path/to/your-video.webm" type="video/webm" />
+                Your browser does not support the video tag.
+              </video>
+
+              {/* Remove or comment out the YouTube iframe */}
+              {/* 
+              <iframe
+                src="https://www.youtube.com/embed/VIDEO_ID"
+                title="TeamBrain Demo Video"
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
               />
+              */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
               <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-full p-2">
                 <svg
@@ -129,66 +162,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Features Section */}
-      <section id="features" className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why TeamBrain?</h2>
-            <p className="text-xl text-gray-600">Empower your team with AI-driven productivity tools.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Feature 1 */}
-            <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-teal-100 feature-card">
-              <div className="h-12 w-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
-                <Calendar className="h-6 w-6 text-brand-primary" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Smart Meeting Agendas</h3>
-              <p className="text-gray-600">
-                AI generates tailored agendas for requirements gathering, sprint planning, and more, pulling from your
-                Confluence knowledge base.
-              </p>
-            </div>
-
-            {/* Feature 2 */}
-            <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-teal-100 feature-card">
-              <div className="h-12 w-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
-                <MessageSquare className="h-6 w-6 text-brand-primary" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Real-Time Insights</h3>
-              <p className="text-gray-600">
-                TeamBrain listens to meetings, suggests questions, and captures answers in real time.
-              </p>
-            </div>
-
-            {/* Feature 3 */}
-            <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-teal-100 feature-card">
-              <div className="h-12 w-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
-                <FileText className="h-6 w-6 text-brand-primary" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Knowledge UI</h3>
-              <p className="text-gray-600">
-                Access meeting transcripts, user stories, and artifacts in a centralized hub.
-              </p>
-            </div>
-
-            {/* Feature 4 */}
-            <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all hover:border-teal-100 feature-card">
-              <div className="h-12 w-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
-                <div className="relative h-6 w-6">
-                  <Image src="/images/logo.png" alt="TeamBrain Logo" fill className="object-contain" />
-                </div>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Conversational Bot</h3>
-              <p className="text-gray-600">
-                Query your team's knowledge base anytime with an AI-powered chat interface.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      {/* Features Section - Now a client component */}
+      <FeaturesSectionClient />
       {/* Use Cases Section */}
       <section id="use-cases" className="py-16 md:py-24 bg-gray-200">
         <div className="container mx-auto px-4">
@@ -204,8 +179,8 @@ export default function Home() {
             <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all use-case-card">
               <div className="h-48 bg-teal-100">
                 <img
-                  src="/placeholder.svg?height=400&width=600"
-                  alt="Product Development"
+                  src="/images/sprint_planning.png"
+                  alt="Team collaborating on sprint planning with sticky notes"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -225,8 +200,8 @@ export default function Home() {
             <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all use-case-card">
               <div className="h-48 bg-teal-100">
                 <img
-                  src="/placeholder.svg?height=400&width=600"
-                  alt="Engineering"
+                  src="/images/dev_team.png"
+                  alt="Engineering team collaborating on code"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -247,8 +222,8 @@ export default function Home() {
             <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all use-case-card">
               <div className="h-48 bg-teal-100">
                 <img
-                  src="/placeholder.svg?height=400&width=600"
-                  alt="Cross-Functional Teams"
+                  src="/images/cross_functional.png"
+                  alt="Cross-functional teams collaborating"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -266,7 +241,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* How It Works Section */}
       <section id="how-it-works" className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
@@ -510,16 +484,17 @@ export default function Home() {
             <div className="text-center mt-16 timeline-item">
               <div className="bg-gradient-to-r from-brand-primary to-brand-dark rounded-2xl p-8 md:p-12 text-white">
                 <h3 className="text-2xl md:text-3xl font-bold mb-4">Ready to experience the TeamBrain Flow?</h3>
-                <p className="text-lg mb-8 opacity-90">Request a Demo and make your meetings unstoppable.</p>
-                <Button size="lg" className="bg-white text-brand-primary hover:bg-gray-100 font-semibold">
-                  Request a Demo
-                </Button>
+                <p className="text-lg mb-8 opacity-90">Join our waitlist and make your meetings unstoppable.</p>
+                <Link href="#contact">
+                  <Button size="lg" className="bg-white text-brand-primary hover:bg-gray-100 font-semibold">
+                    Join Waitlist
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
-
       {/* Contact Section */}
       <section id="contact" className="py-16 md:py-24 bg-gray-200">
         <div className="container mx-auto px-4">
@@ -529,42 +504,10 @@ export default function Home() {
           </div>
 
           <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-sm p-6 md:p-8">
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                    Name
-                  </label>
-                  <Input id="name" placeholder="Your name" />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                    Email
-                  </label>
-                  <Input id="email" type="email" placeholder="your.email@company.com" />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
-                  Company
-                </label>
-                <Input id="company" placeholder="Your company name" />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                  Message
-                </label>
-                <Textarea id="message" placeholder="How can we help you?" rows={4} />
-              </div>
-
-              <Button className="w-full bg-brand-primary hover:bg-teal-600">Send Message</Button>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </section>
-
       {/* Footer */}
       <footer className="bg-brand-dark text-white py-12">
         <div className="container mx-auto px-4">
@@ -583,7 +526,7 @@ export default function Home() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+                    <Link href="#features" className="text-gray-400 hover:text-white transition-colors">
                       Use Cases
                     </Link>
                   </li>
@@ -618,7 +561,7 @@ export default function Home() {
                 <h4 className="font-semibold mb-3">Support</h4>
                 <ul className="space-y-2">
                   <li>
-                    <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+                    <Link href="#contact" className="text-gray-400 hover:text-white transition-colors">
                       Contact
                     </Link>
                   </li>
@@ -635,9 +578,6 @@ export default function Home() {
                 </ul>
               </div>
             </div>
-          </div>
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
-            <p>© {new Date().getFullYear()} TeamBrain. All rights reserved.</p>
           </div>
         </div>
       </footer>

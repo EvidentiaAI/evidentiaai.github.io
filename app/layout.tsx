@@ -9,7 +9,7 @@ export const metadata = {
   title: "TeamBrain - AI-powered Meeting Optimization",
   description:
     "AI-powered meeting optimization, knowledge capture, and workflow automation for product development teams.",
-    generator: 'v0.dev'
+    generator: 'v0.app'
 }
 
 export default function RootLayout({
