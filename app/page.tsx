@@ -73,7 +73,7 @@ export default function Home() {
               AI-powered meeting optimization, knowledge capture, and workflow automation for product development teams.
             </p>
             <div className="mb-8 text-center">
-              <p className="text-lg font-medium mb-6">Seamlessly integrates with Teams, Confluence, and Jira</p>
+              <p className="text-lg font-medium mb-6">Built for Microsoft Teams with seamless integration with Confluence, Jira, and Azure DevOps </p>
               <div className="flex items-center justify-center gap-8">
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Microsoft-Teams-Symbol%20-2-rHESfDymve6RibneM8g1bAz6DP2aTE.png"
