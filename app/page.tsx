@@ -6,6 +6,7 @@ import { Logo } from "@/components/logo"
 import Image from "next/image"
 import { FeaturesSectionClient } from "@/components/features-section-client" // Import the new client component
 import { ContactForm } from "@/components/contact-form"
+import { HLSVideoPlayer } from "@/components/hls-video-player"
 
 export default function Home() {
   return (
@@ -119,30 +120,14 @@ export default function Home() {
           </div>
           <div className="mt-16 max-w-4xl mx-auto">
             <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl border border-gray-200 bg-white">
-              {/* Option C: HTML5 Video - for your hosted MP4 file */}
-              <video
+              {/* HLS Video Player for M3U8 */}
+              <HLSVideoPlayer
+                src="/media/TeamBrain.m3u8"
+                poster="/images/video-thumbnail.jpg"
                 className="w-full h-full object-cover"
-                controls
-                preload="metadata"
-                poster="/placeholder.svg?height=720&width=1280" // Replace with your video thumbnail
-              >
-                <source src="https://your-domain.com/path/to/your-video.mp4" type="video/mp4" />
-                <source src="https://your-domain.com/path/to/your-video.webm" type="video/webm" />
-                Your browser does not support the video tag.
-              </video>
-
-              {/* Remove or comment out the YouTube iframe */}
-              {/* 
-              <iframe
-                src="https://www.youtube.com/embed/VIDEO_ID"
-                title="TeamBrain Demo Video"
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
               />
-              */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-full p-2">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"></div>
+              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-full p-2 pointer-events-none">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"

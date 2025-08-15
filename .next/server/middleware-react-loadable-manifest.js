@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST='{"node_modules\\\\next\\\\dist\\\\client\\\\index.js -> ../pages/_app":{"id":472,"files":["static/chunks/472.a3826d29d6854395.js"]},"node_modules\\\\next\\\\dist\\\\client\\\\index.js -> ../pages/_error":{"id":9341,"files":["static/chunks/341.2903e54d3da731c1.js"]}}';
+self.__REACT_LOADABLE_MANIFEST="{\"components/hls-video-player.tsx -> hls.js\":{\"id\":\"components/hls-video-player.tsx -> hls.js\",\"files\":[\"static/chunks/_app-pages-browser_node_modules_hls_js_dist_hls_mjs.js\"]}}"
