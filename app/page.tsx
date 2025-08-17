@@ -25,7 +25,7 @@ export default function Home() {
               Home
             </Link>
             <Link href="#features" className="text-sm font-medium hover:text-brand-primary transition-colors">
-              Features
+              Why TeamBrain?
             </Link>
             <Link href="#use-cases" className="text-sm font-medium hover:text-brand-primary transition-colors">
               Use Cases
@@ -39,7 +39,12 @@ export default function Home() {
               Join Waitlist
             </Button>
           </Link>
-          <Button variant="ghost" size="icon" className="md:hidden" id="mobile-menu-button">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden text-white hover:bg-white/10"
+            id="mobile-menu-button"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -74,7 +79,10 @@ export default function Home() {
               AI-powered meeting optimization, knowledge capture, and workflow automation for product development teams.
             </p>
             <div className="mb-8 text-center">
-              <p className="text-lg font-medium mb-6">Built for Microsoft Teams with seamless integration with Confluence, Jira, and Azure DevOps </p>
+              <p className="text-lg font-medium mb-6">
+                Built for Microsoft Teams.<br />
+                Seamlessly integrates with Confluence, Jira, and Azure DevOps
+              </p>
               <div className="flex items-center justify-center gap-8">
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Microsoft-Teams-Symbol%20-2-rHESfDymve6RibneM8g1bAz6DP2aTE.png"
@@ -91,6 +99,11 @@ export default function Home() {
                   alt="Jira logo"
                   className="h-12 object-contain"
                 />
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Azure-DevOps-Logo-1-CzgeJXvu7RnelQjzPJPXpfTmC0pAMO.png"
+                  alt="Azure DevOps logo"
+                  className="h-12 object-contain"
+                />
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-2">
@@ -99,7 +112,11 @@ export default function Home() {
                   Join Waitlist
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="gap-2 bg-transparent">
+              <Button
+                size="lg"
+                variant="outline"
+                className="gap-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white bg-transparent"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -127,7 +144,7 @@ export default function Home() {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"></div>
-              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-full p-2 pointer-events-none">
+              <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -485,7 +502,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Team?</h2>
-            <p className="text-xl text-gray-600">Book a demo or ask us anything.</p>
+            <p className="text-xl text-gray-600">Join the Waitlist or Book a Demo!</p>
           </div>
 
           <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-sm p-6 md:p-8">
@@ -499,25 +516,20 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
               <Logo className="text-white" />
-              <p className="text-gray-400 mt-2">AI-powered meeting optimization</p>
+              <p className="text-gray-400 mt-2">Unlock Knowledge. Unleash Productivity.</p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-16">
               <div>
                 <h4 className="font-semibold mb-3">Product</h4>
                 <ul className="space-y-2">
                   <li>
-                    <Link href="#" className="text-gray-400 hover:text-white transition-colors">
-                      Features
-                    </Link>
-                  </li>
-                  <li>
                     <Link href="#features" className="text-gray-400 hover:text-white transition-colors">
-                      Use Cases
+                      Why TeamBrain?
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="text-gray-400 hover:text-white transition-colors">
-                      Pricing
+                    <Link href="#use-cases" className="text-gray-400 hover:text-white transition-colors">
+                      Use Cases
                     </Link>
                   </li>
                 </ul>
@@ -535,11 +547,6 @@ export default function Home() {
                       Blog
                     </Link>
                   </li>
-                  <li>
-                    <Link href="#" className="text-gray-400 hover:text-white transition-colors">
-                      Careers
-                    </Link>
-                  </li>
                 </ul>
               </div>
               <div>
@@ -548,11 +555,6 @@ export default function Home() {
                   <li>
                     <Link href="#contact" className="text-gray-400 hover:text-white transition-colors">
                       Contact
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#" className="text-gray-400 hover:text-white transition-colors">
-                      Documentation
                     </Link>
                   </li>
                   <li>

@@ -11,7 +11,7 @@ export function FeaturesSectionClient() {
       icon: <Calendar className="h-6 w-6 text-brand-primary" />,
       title: "Smart Meeting Agendas",
       description:
-        "AI generates tailored agendas for requirements gathering, sprint planning, and more, pulling from your Confluence knowledge base.",
+        "Stop wasting time on chaotic prep—TeamBrain’s AI crafts personalized agendas for requirements gathering, sprint planning, and beyond, effortlessly drawing from your knowledge base to keep every meeting on track.",
       imageSrc: "/images/meeting_agenda_3.png",
       imageAlt:
         "TeamBrain meeting agenda interface showing an AI-generated sprint planning agenda with detailed objectives and tasks",
@@ -20,21 +20,21 @@ export function FeaturesSectionClient() {
     {
       id: "real-time-insights",
       icon: <MessageSquare className="h-6 w-6 text-brand-primary" />,
-      title: "Real-Time Insights",
-      description: "TeamBrain listens to meetings, suggests questions, and captures answers in real time.",
+      title: "Live Meeting Intelligence",
+      description: "Never miss a critical detail again—TeamBrain actively listens during meetings, suggests smart questions to spark deeper discussions, and captures answers in real time to keep your team aligned.",
       imageSrc: "/images/meeting_bot.png",
       imageAlt:
-        "TeamBrain real-time insights interface showing AI-powered meeting assistance with structured questioning for Customer360 dashboard requirements gathering",
+        "TeamBrain real-time insights interface showing AI-powered meeting assistance",
       imageCaption: null,
     },
     {
       id: "knowledge-ui",
       icon: <FileText className="h-6 w-6 text-brand-primary" />,
-      title: "Knowledge UI",
-      description: "Access meeting transcripts, user stories, and artifacts in a centralized hub.",
+      title: "Knowledge Powerhouse",
+      description: "Boost your team’s success—TeamBrain captures and transforms company knowledge into dynamic, up-to-date documentation, storing it securely in your knowledge base and delivering unbeatable impact via the Knowledge UI anytime you need it!",
       imageSrc: "/images/knowledge_ui_2.png",
       imageAlt:
-        "TeamBrain knowledge UI interface showing calls, PII data redaction requirements, product documents, user stories, and meeting transcripts in a centralized dashboard",
+        "",
       imageCaption: null,
     },
     {
@@ -44,8 +44,8 @@ export function FeaturesSectionClient() {
           <Image src="/images/logo.png" alt="TeamBrain Logo" fill className="object-contain" />
         </div>
       ),
-      title: "Conversational Bot",
-      description: "Query your team's knowledge base anytime with an AI-powered chat interface.",
+      title: "Instant Knowledge Retrieval",
+      description: "Get fast answers anytime—TeamBrain’s AI-powered chat instantly taps into your team’s knowledge base on demand, empowering you to tackle challenges without delay.",
       imageSrc: "/images/conv_bot.png",
       // Updated alt text to describe the Assist chat interface with meeting summaries
       imageAlt:

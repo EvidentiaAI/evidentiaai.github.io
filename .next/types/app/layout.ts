@@ -1,4 +1,4 @@
-// File: /Users/ali/Evidentia Code/evidentiaai.github.io/app/layout.tsx
+// File: C:\Users\f_bey\Git\website\evidentiaai.github.io\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
