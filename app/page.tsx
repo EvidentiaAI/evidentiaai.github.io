@@ -681,22 +681,6 @@ export default function Home() {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"></div>
-              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-full p-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-play text-brand-primary"
-                >
-                  <polygon points="5 3 19 12 5 21 5 3" />
-                </svg>
-              </div>
             </div>
           </div>
         </div>
