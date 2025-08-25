@@ -38,15 +38,23 @@ export default function HomeClient() {
 
   // Initialize mobile menu button
   useEffect(() => {
-    const mobileMenuButton = document.getElementById("mobile-menu-button")
-    if (mobileMenuButton) {
-      mobileMenuButton.addEventListener("click", toggleMobileMenu)
-    }
-    return () => {
-      if (mobileMenuButton) {
-        mobileMenuButton.removeEventListener("click", toggleMobileMenu)
+    const initializeMobileMenu = () => {
+      try {
+        const mobileMenuButton = document.getElementById("mobile-menu-button")
+        if (mobileMenuButton) {
+          mobileMenuButton.addEventListener("click", toggleMobileMenu)
+          return () => {
+            mobileMenuButton.removeEventListener("click", toggleMobileMenu)
+          }
+        }
+      } catch (error) {
+        console.error("[v0] Error initializing mobile menu:", error)
       }
+      return () => {}
     }
+
+    const cleanup = initializeMobileMenu()
+    return cleanup
   }, [])
 
   return (
@@ -56,7 +64,7 @@ export default function HomeClient() {
       <div id="mobile-menu" className="fixed inset-0 bg-white z-50 hidden">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Logo />
-          <Button variant="ghost" size="icon" onClick={toggleMobileMenu}>
+          <Button variant="ghost" size="icon" className="text-gray-700 hover:bg-gray-100" onClick={toggleMobileMenu}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -77,13 +85,13 @@ export default function HomeClient() {
         <nav className="container mx-auto px-4 py-8">
           <ul className="space-y-6">
             <li>
-              <Link href="#" className="text-xl font-medium block py-2" onClick={toggleMobileMenu}>
+              <Link href="#top" className="text-xl font-medium block py-2" onClick={toggleMobileMenu}>
                 Home
               </Link>
             </li>
             <li>
               <Link href="#features" className="text-xl font-medium block py-2" onClick={toggleMobileMenu}>
-                Features
+                Why TeamBrain?
               </Link>
             </li>
             <li>
@@ -97,13 +105,18 @@ export default function HomeClient() {
               </Link>
             </li>
             <li>
+              <Link href="#faq" className="text-xl font-medium block py-2" onClick={toggleMobileMenu}>
+                FAQ
+              </Link>
+            </li>
+            <li>
               <Link href="#contact" className="text-xl font-medium block py-2" onClick={toggleMobileMenu}>
                 Contact
               </Link>
             </li>
           </ul>
           <div className="mt-8">
-            <Button className="w-full bg-brand-primary hover:bg-teal-600">Request a Demo</Button>
+            <Button className="w-full bg-brand-primary hover:bg-teal-600">Request Early Access</Button>
           </div>
         </nav>
       </div>

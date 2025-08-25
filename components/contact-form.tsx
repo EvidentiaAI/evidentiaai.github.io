@@ -12,6 +12,8 @@ export function ContactForm() {
     email: "",
     company: "",
     companySize: "",
+    documentationTool: "",
+    ticketingTool: "", // Added new field for ticketing tool
     message: "",
   })
   const [emailError, setEmailError] = useState("")
@@ -74,27 +76,30 @@ export function ContactForm() {
         fields.push({ name: "company_size", value: formData.companySize })
       }
 
+      if (formData.documentationTool) {
+        fields.push({ name: "documentation_tool", value: formData.documentationTool })
+      }
+
+      if (formData.ticketingTool) {
+        fields.push({ name: "ticketing_tool", value: formData.ticketingTool })
+      }
+
       if (formData.message.trim()) {
         fields.push({ name: "customer_join_waitlist_note", value: formData.message })
       }
 
-      // Format data for HubSpot API
-      const hubspotData = {
-        fields,
-        context: {
-          pageUri: window.location.href,
-          pageName: "TeamBrain Waitlist",
-        },
-      }
+      console.log("Submitting to HubSpot:", fields)
 
-      console.log("Submitting to HubSpot:", hubspotData)
+      const hubspotPayload = {
+        fields: fields,
+      }
 
       const response = await fetch(hubspotEndpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(hubspotData),
+        body: JSON.stringify(hubspotPayload),
       })
 
       console.log("HubSpot response status:", response.status)
@@ -109,6 +114,8 @@ export function ContactForm() {
           email: "",
           company: "",
           companySize: "",
+          documentationTool: "",
+          ticketingTool: "",
           message: "",
         })
       } else {
@@ -208,13 +215,54 @@ export function ContactForm() {
       </div>
 
       <div>
+        <label htmlFor="documentation-tool" className="block text-sm font-medium text-gray-700 mb-1">
+          Documentation Tool
+        </label>
+        <select
+          id="documentation-tool"
+          name="documentationTool"
+          value={formData.documentationTool}
+          onChange={handleInputChange}
+          className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          <option value="">Select your documentation tool</option>
+          <option value="Confluence">Confluence</option>
+          <option value="Azure DevOps Wiki">Azure DevOps Wiki</option>
+          <option value="SharePoint">SharePoint</option>
+          <option value="Notion">Notion</option>
+          <option value="Google Docs">Google Docs</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div>
+        <label htmlFor="ticketing-tool" className="block text-sm font-medium text-gray-700 mb-1">
+          Ticketing Tool
+        </label>
+        <select
+          id="ticketing-tool"
+          name="ticketingTool"
+          value={formData.ticketingTool}
+          onChange={handleInputChange}
+          className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          <option value="">Select your ticketing tool</option>
+          <option value="Jira">Jira</option>
+          <option value="Azure DevOps">Azure DevOps</option>
+          <option value="Linear">Linear</option>
+          <option value="GitHub Issues">GitHub Issues</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div>
         <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
           Message
         </label>
         <Textarea
           id="message"
           name="message"
-          placeholder="How can we help you?"
+          placeholder="Count me in—I'm ready to work smarter"
           rows={4}
           value={formData.message}
           onChange={handleInputChange}
@@ -222,7 +270,7 @@ export function ContactForm() {
       </div>
 
       <Button type="submit" className="w-full bg-brand-primary hover:bg-teal-600" disabled={isSubmitting}>
-        {isSubmitting ? "Submitting..." : "Submit"}
+        {isSubmitting ? "Submitting..." : "Join the Waitlist"}
       </Button>
     </form>
   )

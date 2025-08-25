@@ -7,6 +7,7 @@ import Image from "next/image"
 import { FeaturesSectionClient } from "@/components/features-section-client" // Import the new client component
 import { ContactForm } from "@/components/contact-form"
 import { HLSVideoPlayer } from "@/components/hls-video-player"
+import { FAQSection } from "@/components/faq-section"
 
 export default function Home() {
   return (
@@ -33,16 +34,19 @@ export default function Home() {
             <Link href="#how-it-works" className="text-sm font-medium hover:text-brand-primary transition-colors">
               How It Works
             </Link>
+            <Link href="#faq" className="text-sm font-medium hover:text-brand-primary transition-colors">
+              FAQ
+            </Link>
           </nav>
           <Link href="#contact">
             <Button size="sm" className="hidden md:flex bg-brand-primary hover:bg-teal-600">
-              Join Waitlist
+              Request Early Access
             </Button>
           </Link>
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden text-white hover:bg-white/10"
+            className="md:hidden text-gray-700 hover:bg-gray-100"
             id="mobile-menu-button"
           >
             <svg
@@ -67,8 +71,561 @@ export default function Home() {
       {/* Hero Section */}
       <section className="pt-24 pb-16 md:pt-32 md:pb-24 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-teal-50 opacity-70"></div>
-          <div className="network-animation absolute inset-0"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-slate-100 to-gray-200"></div>
+          <div className="absolute inset-0 opacity-75">
+            <svg className="w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <linearGradient id="nodeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="rgba(214, 234, 231, 0.9)" />
+                  <stop offset="100%" stopColor="rgba(186, 220, 216, 0.7)" />
+                </linearGradient>
+                <linearGradient id="flowingGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="rgba(148, 163, 184, 0.2)" />
+                  <stop offset="50%" stopColor="rgba(148, 163, 184, 0.6)" />
+                  <stop offset="100%" stopColor="rgba(148, 163, 184, 0.2)" />
+                  <animateTransform
+                    attributeName="gradientTransform"
+                    type="translate"
+                    values="0 0; 100 0; 0 0"
+                    dur="6s"
+                    repeatCount="indefinite"
+                  />
+                </linearGradient>
+              </defs>
+
+              {/* Connection lines with subtle flowing effect */}
+              <g stroke="url(#flowingGradient)" strokeWidth="1" fill="none">
+                <line
+                  x1="100"
+                  y1="150"
+                  x2="300"
+                  y2="200"
+                  className="animate-pulse"
+                  style={{ animationDuration: "2.5s", animationDelay: "0s" }}
+                />
+                <line
+                  x1="300"
+                  y1="200"
+                  x2="500"
+                  y2="180"
+                  className="animate-pulse"
+                  style={{ animationDuration: "3s", animationDelay: "0.5s" }}
+                />
+                <line
+                  x1="500"
+                  y1="180"
+                  x2="700"
+                  y2="220"
+                  className="animate-pulse"
+                  style={{ animationDuration: "2.8s", animationDelay: "1s" }}
+                />
+                <line
+                  x1="700"
+                  y1="220"
+                  x2="900"
+                  y2="160"
+                  className="animate-pulse"
+                  style={{ animationDuration: "4.5s", animationDelay: "1.5s" }}
+                />
+                <line
+                  x1="900"
+                  y1="160"
+                  x2="1100"
+                  y2="190"
+                  className="animate-pulse"
+                  style={{ animationDuration: "3s", animationDelay: "2s" }}
+                />
+
+                <line
+                  x1="150"
+                  y1="300"
+                  x2="350"
+                  y2="280"
+                  className="animate-pulse"
+                  style={{ animationDuration: "4s", animationDelay: "0.3s" }}
+                />
+                <line
+                  x1="350"
+                  y1="280"
+                  x2="550"
+                  y2="320"
+                  className="animate-pulse"
+                  style={{ animationDuration: "3.5s", animationDelay: "0.8s" }}
+                />
+                <line
+                  x1="550"
+                  y1="320"
+                  x2="750"
+                  y2="300"
+                  className="animate-pulse"
+                  style={{ animationDuration: "4.5s", animationDelay: "1.3s" }}
+                />
+                <line
+                  x1="750"
+                  y1="300"
+                  x2="950"
+                  y2="340"
+                  className="animate-pulse"
+                  style={{ animationDuration: "3s", animationDelay: "1.8s" }}
+                />
+
+                <line
+                  x1="200"
+                  y1="450"
+                  x2="400"
+                  y2="420"
+                  className="animate-pulse"
+                  style={{ animationDuration: "3.5s", animationDelay: "0.2s" }}
+                />
+                <line
+                  x1="400"
+                  y1="420"
+                  x2="600"
+                  y2="460"
+                  className="animate-pulse"
+                  style={{ animationDuration: "4s", animationDelay: "0.7s" }}
+                />
+                <line
+                  x1="600"
+                  y1="460"
+                  x2="800"
+                  y2="440"
+                  className="animate-pulse"
+                  style={{ animationDuration: "4.5s", animationDelay: "1.2s" }}
+                />
+                <line
+                  x1="800"
+                  y1="440"
+                  x2="1000"
+                  y2="480"
+                  className="animate-pulse"
+                  style={{ animationDuration: "3s", animationDelay: "1.7s" }}
+                />
+
+                <line
+                  x1="250"
+                  y1="600"
+                  x2="450"
+                  y2="580"
+                  className="animate-pulse"
+                  style={{ animationDuration: "4s", animationDelay: "0.4s" }}
+                />
+                <line
+                  x1="450"
+                  y1="580"
+                  x2="650"
+                  y2="620"
+                  className="animate-pulse"
+                  style={{ animationDuration: "3.5s", animationDelay: "0.9s" }}
+                />
+                <line
+                  x1="650"
+                  y1="620"
+                  x2="850"
+                  y2="600"
+                  className="animate-pulse"
+                  style={{ animationDuration: "4.5s", animationDelay: "1.4s" }}
+                />
+
+                {/* Vertical connections */}
+                <line
+                  x1="300"
+                  y1="200"
+                  x2="350"
+                  y2="280"
+                  className="animate-pulse"
+                  style={{ animationDuration: "3s", animationDelay: "0.6s" }}
+                />
+                <line
+                  x1="500"
+                  y1="180"
+                  x2="550"
+                  y2="320"
+                  className="animate-pulse"
+                  style={{ animationDuration: "4s", animationDelay: "1.1s" }}
+                />
+                <line
+                  x1="700"
+                  y1="220"
+                  x2="750"
+                  y2="300"
+                  className="animate-pulse"
+                  style={{ animationDuration: "3.5s", animationDelay: "1.6s" }}
+                />
+                <line
+                  x1="350"
+                  y1="280"
+                  x2="400"
+                  y2="420"
+                  className="animate-pulse"
+                  style={{ animationDuration: "4.5s", animationDelay: "0.1s" }}
+                />
+                <line
+                  x1="550"
+                  y1="320"
+                  x2="600"
+                  y2="460"
+                  className="animate-pulse"
+                  style={{ animationDuration: "3s", animationDelay: "0.6s" }}
+                />
+                <line
+                  x1="750"
+                  y1="300"
+                  x2="800"
+                  y2="440"
+                  className="animate-pulse"
+                  style={{ animationDuration: "4s", animationDelay: "1.1s" }}
+                />
+                <line
+                  x1="400"
+                  y1="420"
+                  x2="450"
+                  y2="580"
+                  className="animate-pulse"
+                  style={{ animationDuration: "3.5s", animationDelay: "1.6s" }}
+                />
+                <line
+                  x1="600"
+                  y1="460"
+                  x2="650"
+                  y2="620"
+                  className="animate-pulse"
+                  style={{ animationDuration: "4.5s", animationDelay: "0.1s" }}
+                />
+              </g>
+
+              {/* Network nodes with subtle floating motion */}
+              <g>
+                {/* Row 1 */}
+                <circle
+                  cx="100"
+                  cy="150"
+                  r="4"
+                  fill="url(#nodeGradient)"
+                  className="animate-pulse"
+                  style={{ animationDuration: "2s", animationDelay: "0s" }}
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values="0,0; 0,-4; 0,0"
+                    dur="4.5s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+                <circle
+                  cx="300"
+                  cy="200"
+                  r="6"
+                  fill="url(#nodeGradient)"
+                  className="animate-pulse"
+                  style={{ animationDuration: "2.5s", animationDelay: "0.3s" }}
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values="0,0; 3,-3; 0,0"
+                    dur="5s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+                <circle
+                  cx="500"
+                  cy="180"
+                  r="5"
+                  fill="url(#nodeGradient)"
+                  className="animate-pulse"
+                  style={{ animationDuration: "2.2s", animationDelay: "0.6s" }}
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values="0,0; -3,3; 0,0"
+                    dur="5.5s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+                <circle
+                  cx="700"
+                  cy="220"
+                  r="4"
+                  fill="url(#nodeGradient)"
+                  className="animate-pulse"
+                  style={{ animationDuration: "2.8s", animationDelay: "0.9s" }}
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values="0,0; 0,4; 0,0"
+                    dur="4.2s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+                <circle
+                  cx="900"
+                  cy="160"
+                  r="6"
+                  fill="url(#nodeGradient)"
+                  className="animate-pulse"
+                  style={{ animationDuration: "2.3s", animationDelay: "1.2s" }}
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values="0,0; 3,0; 0,0"
+                    dur="4.8s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+                <circle
+                  cx="1100"
+                  cy="190"
+                  r="5"
+                  fill="url(#nodeGradient)"
+                  className="animate-pulse"
+                  style={{ animationDuration: "2.6s", animationDelay: "1.5s" }}
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values="0,0; -3,-3; 0,0"
+                    dur="5.2s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+
+                {/* Row 2 */}
+                <circle
+                  cx="150"
+                  cy="300"
+                  r="5"
+                  fill="url(#nodeGradient)"
+                  className="animate-pulse"
+                  style={{ animationDuration: "2.4s", animationDelay: "0.2s" }}
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values="0,0; 0,3; 0,0"
+                    dur="4.6s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+                <circle
+                  cx="350"
+                  cy="280"
+                  r="4"
+                  fill="url(#nodeGradient)"
+                  className="animate-pulse"
+                  style={{ animationDuration: "2.7s", animationDelay: "0.5s" }}
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values="0,0; 3,3; 0,0"
+                    dur="5.1s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+                <circle
+                  cx="550"
+                  cy="320"
+                  r="6"
+                  fill="url(#nodeGradient)"
+                  className="animate-pulse"
+                  style={{ animationDuration: "2.1s", animationDelay: "0.8s" }}
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values="0,0; -3,0; 0,0"
+                    dur="5.8s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+                <circle
+                  cx="750"
+                  cy="300"
+                  r="5"
+                  fill="url(#nodeGradient)"
+                  className="animate-pulse"
+                  style={{ animationDuration: "2.9s", animationDelay: "1.1s" }}
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values="0,0; 0,-3; 0,0"
+                    dur="4.4s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+                <circle
+                  cx="950"
+                  cy="340"
+                  r="4"
+                  fill="url(#nodeGradient)"
+                  className="animate-pulse"
+                  style={{ animationDuration: "2.2s", animationDelay: "1.4s" }}
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values="0,0; 3,-3; 0,0"
+                    dur="4.9s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+
+                {/* Row 3 */}
+                <circle
+                  cx="200"
+                  cy="450"
+                  r="4"
+                  fill="url(#nodeGradient)"
+                  className="animate-pulse"
+                  style={{ animationDuration: "2.6s", animationDelay: "0.1s" }}
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values="0,0; -3,3; 0,0"
+                    dur="4.7s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+                <circle
+                  cx="400"
+                  cy="420"
+                  r="6"
+                  fill="url(#nodeGradient)"
+                  className="animate-pulse"
+                  style={{ animationDuration: "2.3s", animationDelay: "0.4s" }}
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values="0,0; 0,4; 0,0"
+                    dur="5.3s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+                <circle
+                  cx="600"
+                  cy="460"
+                  r="5"
+                  fill="url(#nodeGradient)"
+                  className="animate-pulse"
+                  style={{ animationDuration: "2.8s", animationDelay: "0.7s" }}
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values="0,0; 3,0; 0,0"
+                    dur="5.9s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+                <circle
+                  cx="800"
+                  cy="440"
+                  r="4"
+                  fill="url(#nodeGradient)"
+                  className="animate-pulse"
+                  style={{ animationDuration: "2.5s", animationDelay: "1.0s" }}
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values="0,0; -3,-3; 0,0"
+                    dur="4.3s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+                <circle
+                  cx="1000"
+                  cy="480"
+                  r="6"
+                  fill="url(#nodeGradient)"
+                  className="animate-pulse"
+                  style={{ animationDuration: "2.1s", animationDelay: "1.3s" }}
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values="0,0; 0,-4; 0,0"
+                    dur="5.0s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+
+                {/* Row 4 */}
+                <circle
+                  cx="250"
+                  cy="600"
+                  r="5"
+                  fill="url(#nodeGradient)"
+                  className="animate-pulse"
+                  style={{ animationDuration: "2.7s", animationDelay: "0.3s" }}
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values="0,0; 3,3; 0,0"
+                    dur="4.8s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+                <circle
+                  cx="450"
+                  cy="580"
+                  r="4"
+                  fill="url(#nodeGradient)"
+                  className="animate-pulse"
+                  style={{ animationDuration: "2.4s", animationDelay: "0.6s" }}
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values="0,0; -3,0; 0,0"
+                    dur="5.4s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+                <circle
+                  cx="650"
+                  cy="620"
+                  r="6"
+                  fill="url(#nodeGradient)"
+                  className="animate-pulse"
+                  style={{ animationDuration: "2.2s", animationDelay: "0.9s" }}
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values="0,0; 0,3; 0,0"
+                    dur="6.0s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+                <circle
+                  cx="850"
+                  cy="600"
+                  r="5"
+                  fill="url(#nodeGradient)"
+                  className="animate-pulse"
+                  style={{ animationDuration: "2.9s", animationDelay: "1.2s" }}
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    values="0,0; 3,-3; 0,0"
+                    dur="4.5s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+              </g>
+            </svg>
+          </div>
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
@@ -76,11 +633,12 @@ export default function Home() {
               Supercharge Your Team with TeamBrain
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 animate-fade-in-delay">
-              AI-powered meeting optimization, knowledge capture, and workflow automation for product development teams.
+              AI-powered knowledge capture, workflow automation, and meeting optimization for product development teams.
             </p>
             <div className="mb-8 text-center">
               <p className="text-lg font-medium mb-6">
-                Built for Microsoft Teams.<br />
+                Built for Microsoft Teams.
+                <br />
                 Seamlessly integrates with Confluence, Jira, and Azure DevOps
               </p>
               <div className="flex items-center justify-center gap-8">
@@ -109,7 +667,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-2">
               <Link href="#contact">
                 <Button size="lg" className="bg-brand-primary hover:bg-teal-600">
-                  Join Waitlist
+                  Request Early Access
                 </Button>
               </Link>
             </div>
@@ -123,7 +681,7 @@ export default function Home() {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"></div>
-              <div>
+              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-full p-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -362,8 +920,8 @@ export default function Home() {
                     </div>
                     <h3 className="text-2xl md:text-3xl font-bold mb-4">Capture the Magic</h3>
                     <p className="text-lg text-gray-600 mb-6">
-                      Post-meeting, TeamBrain turns discussions into polished Jira tickets, user stories, or process
-                      diagrams, all organized in a Knowledge UI. Every idea is ready to roll.
+                      TeamBrain turns discussions into polished Jira tickets, user stories, or process diagrams, all
+                      organized in a Knowledge UI. Every idea is ready to roll.
                     </p>
                   </div>
                   <div className="lg:w-1/2">
@@ -468,7 +1026,7 @@ export default function Home() {
                 <p className="text-lg mb-8 opacity-90">Join our waitlist and make your meetings unstoppable.</p>
                 <Link href="#contact">
                   <Button size="lg" className="bg-white text-brand-primary hover:bg-gray-100 font-semibold">
-                    Join Waitlist
+                    Request Early Access
                   </Button>
                 </Link>
               </div>
@@ -476,12 +1034,17 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* FAQ Section */}
+      <FAQSection />
       {/* Contact Section */}
       <section id="contact" className="py-16 md:py-24 bg-gray-200">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Team?</h2>
-            <p className="text-xl text-gray-600">Join the Waitlist or Book a Demo!</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Be the First to Transform How Your Team Works</h2>
+            <p className="text-xl text-gray-600">
+              Smarter knowledge. Seamless workflows. Fewer wasted meetings—get early access to the AI platform built for
+              product teams.
+            </p>
           </div>
 
           <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-sm p-6 md:p-8">
@@ -521,26 +1084,27 @@ export default function Home() {
                       About
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link href="#" className="text-gray-400 hover:text-white transition-colors">
                       Blog
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
               <div>
                 <h4 className="font-semibold mb-3">Support</h4>
                 <ul className="space-y-2">
                   <li>
-                    <Link href="#contact" className="text-gray-400 hover:text-white transition-colors">
+                    <Link href="mailto:hello@evidentia.ai" className="text-gray-400 hover:text-white transition-colors">
                       Contact
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link href="#" className="text-gray-400 hover:text-white transition-colors">
                       Privacy
                     </Link>
                   </li>
+                  */}
                 </ul>
               </div>
             </div>
