@@ -411,7 +411,11 @@ export default function Services() {
                     </Link>
                   </li>
                   <li>
+<<<<<<< HEAD
                     <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">
+=======
+                    <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+>>>>>>> 4ecd681 (Added Servcies Page)
                       Privacy
                     </Link>
                   </li>
