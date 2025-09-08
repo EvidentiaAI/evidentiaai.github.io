@@ -20,21 +20,38 @@ export default function Home() {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Logo />
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="#top" className="text-sm font-medium hover:text-brand-primary transition-colors">
-              {" "}
-              {/* Updated href from "#" to "#top" for smooth scrolling */}
-              Home
-            </Link>
-            <Link href="#features" className="text-sm font-medium hover:text-brand-primary transition-colors">
+            <Link
+              href="#features"
+              className="text-sm font-medium hover:text-brand-primary transition-colors [&.active]:text-brand-primary [&.active]:font-semibold"
+              data-section="features"
+            >
               Why TeamBrain?
             </Link>
-            <Link href="#use-cases" className="text-sm font-medium hover:text-brand-primary transition-colors">
+            <Link
+              href="#use-cases"
+              className="text-sm font-medium hover:text-brand-primary transition-colors [&.active]:text-brand-primary [&.active]:font-semibold"
+              data-section="use-cases"
+            >
               Use Cases
             </Link>
-            <Link href="#how-it-works" className="text-sm font-medium hover:text-brand-primary transition-colors">
+            <Link
+              href="#how-it-works"
+              className="text-sm font-medium hover:text-brand-primary transition-colors [&.active]:text-brand-primary [&.active]:font-semibold"
+              data-section="how-it-works"
+            >
               How It Works
             </Link>
-            <Link href="#faq" className="text-sm font-medium hover:text-brand-primary transition-colors">
+            <Link
+              href="/services"
+              className="text-sm font-medium hover:text-brand-primary transition-colors [&.active]:text-brand-primary [&.active]:font-semibold"
+            >
+              Services
+            </Link>
+            <Link
+              href="#faq"
+              className="text-sm font-medium hover:text-brand-primary transition-colors [&.active]:text-brand-primary [&.active]:font-semibold"
+              data-section="faq"
+            >
               FAQ
             </Link>
           </nav>
@@ -158,7 +175,7 @@ export default function Home() {
                   x2="750"
                   y2="300"
                   className="animate-pulse"
-                  style={{ animationDuration: "4.5s", animationDelay: "1.3s" }}
+                  style={{ animationDuration: "2.8s", animationDelay: "1s" }}
                 />
                 <line
                   x1="750"
@@ -630,10 +647,11 @@ export default function Home() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
-              Supercharge Your Team with TeamBrain
+              Never lose what your team knows
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 animate-fade-in-delay">
-              AI-powered knowledge capture, workflow automation, and meeting optimization for product development teams.
+              TeamBrain turns every conversation, meeting, and walkthrough into actionable knowledge and finished
+              artefacts
             </p>
             <div className="mb-8 text-center">
               <p className="text-lg font-medium mb-6">
@@ -863,7 +881,7 @@ export default function Home() {
                             <span className="text-xs font-medium">Team Meeting</span>
                           </div>
                           <div className="space-y-2 text-xs text-gray-600">
-                            <p>"We need to prioritize the user authentication feature..."</p>
+                            <p>"We need to prioritise the user authentication feature..."</p>
                             <p>"The API integration should be completed first..."</p>
                           </div>
                         </div>
@@ -905,7 +923,7 @@ export default function Home() {
                     <h3 className="text-2xl md:text-3xl font-bold mb-4">Capture the Magic</h3>
                     <p className="text-lg text-gray-600 mb-6">
                       TeamBrain turns discussions into polished Jira tickets, user stories, or process diagrams, all
-                      organized in a Knowledge UI. Every idea is ready to roll.
+                      organised in a Knowledge UI. Every idea is ready to roll.
                     </p>
                   </div>
                   <div className="lg:w-1/2">
@@ -917,7 +935,7 @@ export default function Home() {
                           <p>"Discussed user auth, API integration needed, John to handle by Friday..."</p>
                         </div>
                         <div className="text-center text-2xl">↓</div>
-                        {/* Organized outputs */}
+                        {/* Organised outputs */}
                         <div className="grid grid-cols-2 gap-3">
                           <div className="bg-white rounded-lg p-3 shadow-sm border-l-4 border-brand-primary">
                             <div className="text-xs font-medium text-brand-primary mb-1">JIRA Ticket</div>

@@ -36,6 +36,42 @@ export default function HomeClient() {
     return () => document.removeEventListener("click", handleAnchorClick)
   }, [])
 
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]")
+    const navLinks = document.querySelectorAll('nav a[href^="#"]')
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Remove active class from all nav links
+            navLinks.forEach((link) => {
+              link.classList.remove("text-brand-primary", "font-semibold")
+              link.classList.add("font-medium")
+            })
+
+            // Add active class to current section's nav link
+            const activeLink = document.querySelector(`nav a[href="#${entry.target.id}"]`)
+            if (activeLink) {
+              activeLink.classList.add("text-brand-primary", "font-semibold")
+              activeLink.classList.remove("font-medium")
+            }
+          }
+        })
+      },
+      {
+        rootMargin: "-100px 0px -50% 0px", // Trigger when section is well into view
+        threshold: 0.1,
+      },
+    )
+
+    sections.forEach((section) => observer.observe(section))
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section))
+    }
+  }, [])
+
   // Initialize mobile menu button
   useEffect(() => {
     const initializeMobileMenu = () => {
@@ -85,32 +121,37 @@ export default function HomeClient() {
         <nav className="container mx-auto px-4 py-8">
           <ul className="space-y-6">
             <li>
-              <Link href="#top" className="text-xl font-medium block py-2" onClick={toggleMobileMenu}>
+              <Link href="/" className="text-xl font-medium block py-2" onClick={toggleMobileMenu}>
                 Home
               </Link>
             </li>
             <li>
-              <Link href="#features" className="text-xl font-medium block py-2" onClick={toggleMobileMenu}>
+              <Link href="/#features" className="text-xl font-medium block py-2" onClick={toggleMobileMenu}>
                 Why TeamBrain?
               </Link>
             </li>
             <li>
-              <Link href="#use-cases" className="text-xl font-medium block py-2" onClick={toggleMobileMenu}>
+              <Link href="/#use-cases" className="text-xl font-medium block py-2" onClick={toggleMobileMenu}>
                 Use Cases
               </Link>
             </li>
             <li>
-              <Link href="#how-it-works" className="text-xl font-medium block py-2" onClick={toggleMobileMenu}>
+              <Link href="/#how-it-works" className="text-xl font-medium block py-2" onClick={toggleMobileMenu}>
                 How It Works
               </Link>
             </li>
             <li>
-              <Link href="#faq" className="text-xl font-medium block py-2" onClick={toggleMobileMenu}>
+              <Link href="/services" className="text-xl font-medium block py-2" onClick={toggleMobileMenu}>
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link href="/#faq" className="text-xl font-medium block py-2" onClick={toggleMobileMenu}>
                 FAQ
               </Link>
             </li>
             <li>
-              <Link href="#contact" className="text-xl font-medium block py-2" onClick={toggleMobileMenu}>
+              <Link href="/#contact" className="text-xl font-medium block py-2" onClick={toggleMobileMenu}>
                 Contact
               </Link>
             </li>
