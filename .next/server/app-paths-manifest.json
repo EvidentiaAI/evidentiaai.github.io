@@ -3,8 +3,12 @@
   "/sitemap.xml/route": "app/sitemap.xml/route.js",
   "/page": "app/page.js",
 <<<<<<< HEAD
+<<<<<<< HEAD
   "/privacy/page": "app/privacy/page.js",
 =======
 >>>>>>> 4ecd681 (Added Servcies Page)
+=======
+  "/privacy/page": "app/privacy/page.js",
+>>>>>>> aa75459 (Added privacy page)
   "/services/page": "app/services/page.js"
 }
