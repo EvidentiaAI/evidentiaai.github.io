@@ -1101,12 +1101,11 @@ export default function Home() {
                       Contact
                     </Link>
                   </li>
-                  {/* <li>
-                    <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <li>
+                    <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">
                       Privacy
                     </Link>
                   </li>
-                  */}
                 </ul>
               </div>
             </div>
