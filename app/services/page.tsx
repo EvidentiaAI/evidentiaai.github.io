@@ -23,7 +23,7 @@ export const metadata = {
     title: "Professional Services — TeamBrain AI Implementation & Process Optimisation",
     description:
       "Expert services to accelerate your TeamBrain implementation. Transform captured knowledge into operational excellence with our proven four-phase approach.",
-    url: "https://teambrain.bot/services",
+    url: "https://teambrain.bot/services", // Updated services page URL to teambrain.bot
     images: [
       {
         url: "/images/services-og-image.png",
@@ -40,7 +40,7 @@ export const metadata = {
     images: ["/images/services-twitter-image.png"],
   },
   alternates: {
-    canonical: "https://teambrain.bot/services",
+    canonical: "https://teambrain.bot/services", // Updated canonical URL to teambrain.bot
   },
 }
 
@@ -411,15 +411,7 @@ export default function Services() {
                     </Link>
                   </li>
                   <li>
-<<<<<<< HEAD
-<<<<<<< HEAD
                     <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">
-=======
-                    <Link href="#" className="text-gray-400 hover:text-white transition-colors">
->>>>>>> 4ecd681 (Added Servcies Page)
-=======
-                    <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">
->>>>>>> aa75459 (Added privacy page)
                       Privacy
                     </Link>
                   </li>

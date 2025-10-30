@@ -5,18 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "static/1eYbZNi5HRbMfEUtLTvzJ/_buildManifest.js",
-    "static/1eYbZNi5HRbMfEUtLTvzJ/_ssgManifest.js"
-=======
-    "static/cjqyW9Qj7bKksYUolnh26/_buildManifest.js",
-    "static/cjqyW9Qj7bKksYUolnh26/_ssgManifest.js"
->>>>>>> 4ecd681 (Added Servcies Page)
-=======
-    "static/1eYbZNi5HRbMfEUtLTvzJ/_buildManifest.js",
-    "static/1eYbZNi5HRbMfEUtLTvzJ/_ssgManifest.js"
->>>>>>> aa75459 (Added privacy page)
+    "static/nau8ty5ye6hY1jx9l6QT7/_buildManifest.js",
+    "static/nau8ty5ye6hY1jx9l6QT7/_ssgManifest.js"
   ],
   "rootMainFiles": [
     "static/chunks/webpack-5108fea0585d6fbd.js",
