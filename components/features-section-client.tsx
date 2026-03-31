@@ -34,7 +34,7 @@ export function FeaturesSectionClient() {
       description: "Boost your team’s success—TeamBrain captures and transforms company knowledge into dynamic, up-to-date documentation, storing it securely in your knowledge base and delivering unbeatable impact via the Knowledge UI anytime you need it!",
       imageSrc: "/images/knowledge_ui_2.png",
       imageAlt:
-        "",
+        "TeamBrain Knowledge UI showing a dynamic documentation interface with captured team knowledge and up-to-date process documentation",
       imageCaption: null,
     },
     {

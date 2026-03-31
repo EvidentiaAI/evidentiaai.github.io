@@ -9,11 +9,112 @@ import { ContactForm } from "@/components/contact-form"
 import { HLSVideoPlayer } from "@/components/hls-video-player"
 import { FAQSection } from "@/components/faq-section"
 
+export const metadata = {
+  title: "TeamBrain - AI-powered Meeting Optimisation & Knowledge Capture",
+  description:
+    "TeamBrain is an AI assistant built for product development teams using Microsoft Teams, Confluence, Jira, and Azure DevOps. Automate agendas, capture decisions in real time, and turn meetings into actionable knowledge.",
+  keywords: [
+    "AI meeting assistant",
+    "meeting optimisation",
+    "knowledge capture",
+    "Microsoft Teams AI",
+    "Confluence integration",
+    "Jira integration",
+    "Azure DevOps",
+    "sprint planning AI",
+    "team productivity",
+    "workflow automation",
+  ],
+  alternates: {
+    canonical: "https://teambrain.bot",
+  },
+  openGraph: {
+    title: "TeamBrain - AI-powered Meeting Optimisation & Knowledge Capture",
+    description:
+      "Automate meeting agendas, capture decisions in real time, and unlock institutional knowledge. Built for product teams on Microsoft Teams.",
+    url: "https://teambrain.bot",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "TeamBrain - AI-powered Meeting Optimisation & Knowledge Capture",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image" as const,
+    title: "TeamBrain - AI-powered Meeting Optimisation & Knowledge Capture",
+    description:
+      "Automate meeting agendas, capture decisions in real time, and unlock institutional knowledge. Built for product teams on Microsoft Teams.",
+    images: ["/images/og-image.png"],
+  },
+}
+
 export default function Home() {
   return (
     <div className="min-h-screen" id="top">
       {" "}
       {/* Added id="top" for smooth scrolling to top */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "What is TeamBrain and how does it work?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "TeamBrain is an AI-powered assistant built for product development teams. It's built for Microsoft Teams and connects to the tools you already use—like Confluence, Jira, and Azure DevOps—listens to your meetings, pulls context from your knowledge bases, and automatically creates agendas, captures decisions, and generates project artifacts.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How is TeamBrain different from other AI tools?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Unlike generic AI assistants, TeamBrain is context-aware. It doesn't just transcribe meetings—it understands your product, your backlog, and your documentation. It proactively asks the right questions, ensures decisions are captured in real time, and creates accurate, actionable outputs tailored to your team's unique workflows.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Will TeamBrain fit into our current workflow?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes. TeamBrain is designed to work where your team already works. It integrates seamlessly with Microsoft Teams for collaboration and connects to Confluence, Jira, and Azure DevOps to use and update your existing knowledge. There's no need to change how you operate—TeamBrain enhances your processes without adding overhead.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How secure is TeamBrain?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Security is our top priority. TeamBrain only accesses data you authorize, encrypts all data in transit and at rest, and complies with enterprise-grade security standards. You have full control over what information TeamBrain can access and can revoke permissions at any time.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How long does it take to get started?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Setup takes minutes. Connect TeamBrain to your Microsoft Teams environment, link your Confluence, Jira, and Azure DevOps accounts, and it's ready to start adding value right away. Most teams see measurable improvements in meeting efficiency and knowledge sharing within the first week.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What ROI can we expect?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Teams using TeamBrain typically save hours each week by reducing meeting prep time, eliminating manual note-taking, and automating artifact creation. More importantly, critical knowledge stays captured and accessible, reducing bottlenecks and accelerating project delivery.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
       <HomeClient />
       {/* Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b">

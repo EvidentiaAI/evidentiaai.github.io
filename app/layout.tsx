@@ -61,6 +61,7 @@ export const metadata = {
       "Transform your team's productivity with AI-powered knowledge capture, workflow automation, and meeting optimisation.",
     images: ["/images/twitter-image.png"],
     creator: "@teambrain",
+    site: "@teambrain",
   },
   icons: {
     icon: [
@@ -88,6 +89,10 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#14b8a6" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com" />
         <meta name="msapplication-TileColor" content="#14b8a6" />
         <meta name="format-detection" content="telephone=no" />
 
